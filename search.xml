@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
+    <title>1.JAVA的编程环境安装和配置</title>
     <url>/2019/08/26/1.JAVA%E7%9A%84%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>1.JAVA的编程环境安装和配置</p>
 <ol>
@@ -48,17 +48,291 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/05/30/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>10.控制流（Control Flow）</title>
+    <url>/2019/10/13/10.%E6%8E%A7%E5%88%B6%E6%B5%814/</url>
+    <content><![CDATA[<p>10.控制流（Control Flow）</p>
+<p>3.逻辑运算Logical Operators</p>
+<p>逻辑运算其实就是把一系列的判定条件结合在一起，主要的三个逻辑运算符为and or not</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>.and : &amp;&amp;</span><br><span class="line"><span class="number">2</span>.or  : ||</span><br><span class="line"><span class="number">3</span>.not: !（!=）</span><br></pre></td></tr></table></figure>
+<p>*有多种逻辑运算符在一起的情况：(先看and)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">false</span> &amp;&amp; <span class="keyword">true</span> || <span class="keyword">true</span> </span><br><span class="line"><span class="keyword">false</span> || <span class="keyword">true</span></span><br><span class="line"><span class="keyword">true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">false</span> &amp;&amp; (<span class="keyword">true</span> || <span class="keyword">true</span>) </span><br><span class="line"><span class="keyword">false</span> &amp;&amp; <span class="keyword">true</span></span><br><span class="line"><span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+<p>练习：写一个小程序，能够计算公交车费，1.年龄小于12岁的乘客，免票 2.年龄大于65岁的乘客，免票，3.持有学生证能够，半价优惠</p>
+<p>tip:多个判断（if/else if/boolean/boolean expression）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> our_first_package;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TicketPriceCal</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> ticketPrice = <span class="number">10</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> age=<span class="number">25</span>;</span><br><span class="line">		<span class="keyword">boolean</span> isStudent = <span class="keyword">true</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (age &lt;=<span class="number">12</span> || age &gt;<span class="number">65</span>) &#123;</span><br><span class="line">			ticketPrice = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(isStudent) &#123;</span><br><span class="line">			ticketPrice=<span class="number">5</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"您好，请投币："</span>+ticketPrice);	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>11.控制流（Control Flow）</title>
+    <url>/2019/10/13/11.%E6%8E%A7%E5%88%B6%E6%B5%815/</url>
+    <content><![CDATA[<p>11.控制流（Control Flow）</p>
+<p>练习2：写一个门禁系统，能够给对特工信息进行识别，每个特工有一串特殊的编号，输入系统后，度过编号正确，则识别出特工身份，如果编号错误，则出发时警报。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> our_first_package;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AgentNum</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> AgentCode = <span class="number">888</span>;</span><br><span class="line">		String ScreenShows;</span><br><span class="line">		<span class="keyword">if</span> (AgentCode==<span class="number">888</span>)&#123;</span><br><span class="line">            ScreenShows=<span class="string">"欢迎你，发财特工！"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(AgentCode==<span class="number">666</span>) &#123;</span><br><span class="line">            ScreenShows=<span class="string">"OMG！是你啊，顺顺特工！"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(AgentCode==<span class="number">000</span>)&#123;</span><br><span class="line">            ScreenShows=<span class="string">"老大你好！"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            ScreenShows=<span class="string">"来人啊！报警啦！"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">          </span><br><span class="line">		System.out.println(ScreenShows);	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>12.控制流（Control Flow）</title>
+    <url>/2019/10/13/12.%E6%8E%A7%E5%88%B6%E6%B5%816/</url>
+    <content><![CDATA[<p>12.控制流（Control Flow）</p>
+<p>用到判断相等情况（test for equality）</p>
+<p>switch:专门用作判断相等情况，每种被判断的情况为一个case</p>
+<p>练习2：写一个门禁系统，能够给对特工信息进行识别，每个特工有一串特殊的编号，输入系统后，度过编号正确，则识别出特工身份，如果编号错误，则出发时警报。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> our_first_package;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AgentNum_v2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> AgentCode = <span class="number">888</span>;</span><br><span class="line">		String ScreenShows;</span><br><span class="line">		<span class="keyword">switch</span>(AgentCode)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">000</span>: ScreenShows =<span class="string">"您好，老大！"</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">666</span>: ScreenShows =<span class="string">"欧耶！顺顺特工"</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">888</span>: ScreenShows= <span class="string">"Hi~发财特工"</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span> :ScreenShows = <span class="string">"在我们的数据库中查询不到此特工信息，保安！"</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">             </span><br><span class="line">        &#125;</span><br><span class="line">          </span><br><span class="line">		System.out.println(ScreenShows);	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>13.函数（Function）</title>
+    <url>/2019/10/13/13.%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%B0%83%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="13-函数（Function）"><a href="#13-函数（Function）" class="headerlink" title="13.函数（Function）"></a>13.函数（Function）</h1><p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得 主讲人：William  LX_Lab提供教研与技术支持</p>
+<p>歌名：My Back Pages</p>
+<p>歌手：Bob Dylan / Roger McGuinn / Tom Petty / Neil Young / Eric Clapton / George Harrison</p>
+<p>歌词：</p>
+<p>Crimson flames tied through my ears</p>
+<p>深红色的火舌舔舐我的双耳</p>
+<p>Rolling high and mighty traps</p>
+<p>纵有重重陷阱我仍翻滚前行</p>
+<p>Pounced with fire on flaming roads</p>
+<p>奋不顾身扑向燃烧着的前路</p>
+<p>Using ideas as my maps</p>
+<p>只因有信念将我指引</p>
+<p>“We’ll meet on edges soon” said I</p>
+<p>“我们很快就会到达胜利的彼岸。”我这样说着</p>
+<p>Proud ‘neath heated brow</p>
+<p>眉宇间意气风发</p>
+<p>Ahh, but I was so much older then</p>
+<p>啊，昔日我曾苍老</p>
+<p>I’m younger than that, now</p>
+<p>如今才风华正茂</p>
+<p>Half-wracked prejudice leaped forth</p>
+<p>那些残留的偏见总在脑中闪现</p>
+<p>Rip down all hate, I screamed</p>
+<p>“把所有憎恨的东西都撕碎！”我咆哮着</p>
+<p>Lies that life is black and white</p>
+<p>宣称“人生非黑即白”的谎言</p>
+<p>Spoke from my skull, I dreamed</p>
+<p>不过是一时脑热脱口而出的呓语</p>
+<p>Romantic facts of musketeers</p>
+<p>“<a href="https://www.baidu.com/s?wd=三个火枪手&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">三个火枪手</a>”般的浪漫故事</p>
+<p>Foundationed deep somehow</p>
+<p>不知为何，总是深入人心</p>
+<p>Ahh, but I was so much older then</p>
+<p>啊，昔日我曾苍老</p>
+<p>I’m younger than that now</p>
+<p>如今才风华正茂</p>
+<p>Girls’ faces formed the forward path</p>
+<p>前路上只见女孩们的面容</p>
+<p>From phony jealousy</p>
+<p>出于那虚伪的忌妒之心</p>
+<p>To memorizing politics</p>
+<p>应记取那些久远的</p>
+<p>Of ancient history</p>
+<p><a href="https://www.baidu.com/s?wd=政治斗争&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">政治斗争</a>的历史中</p>
+<p>Flung down by corpse evangelists</p>
+<p>布道者尸骸枕籍</p>
+<p>Unthought of, though somehow</p>
+<p>但不知为何，我竟视而不见</p>
+<p>Ahh, but I was so much older then</p>
+<p>啊，昔日我曾苍老</p>
+<p>I’m younger than that now</p>
+<p>如今才风华正茂</p>
+<p>A self-ordained professor’s tongue</p>
+<p>端着一副自以为是的教授似的腔调</p>
+<p>Too serious to fool</p>
+<p>故作严肃其实愚不可及</p>
+<p>Spouted out that liberty</p>
+<p>信誓旦旦说着的所谓自由啊</p>
+<p>Is just equality in school</p>
+<p>不过只存在教科书里</p>
+<p>Equality, I spoke the word</p>
+<p>我口口声声念叨着“平等”</p>
+<p>As if a wedding vow</p>
+<p>就像念叨善变的婚誓</p>
+<p>Ahh, but I was so much older then</p>
+<p>啊，昔日我曾苍老</p>
+<p>I’m younger than that now</p>
+<p>如今才风华正茂</p>
+<p>In a soldier’s stance, I aimed my hand</p>
+<p>像个斗士一般，我将矛头指向</p>
+<p>At the mongrel dogs who teach</p>
+<p>那些高高在上的鼠辈杂碎</p>
+<p>Fearing not that I’d become my enemy</p>
+<p>在夸夸其谈地说教的时候</p>
+<p>In the instant that I preach</p>
+<p>哪怕推翻自己也毫无所畏</p>
+<p>My existence led by confusion boats</p>
+<p>我的人生像一条迷途的航船</p>
+<p>Mutiny from stern to bow</p>
+<p>开始桀骜不驯，终究还是弯下身躯</p>
+<p>Ahh, but I was so much older then</p>
+<p>啊，昔日我曾苍老</p>
+<p>I’m younger than that now</p>
+<p>如今才风华正茂</p>
+<p>Yes, my guard stood hard when abstract threats</p>
+<p>是的，感受着那些虚无的威胁，我总是斗志昂扬</p>
+<p>Too noble to neglect</p>
+<p>道德上的优越让我忘乎所以</p>
+<p>Deceived me into thinking</p>
+<p>让我误以为</p>
+<p>I had something to protect</p>
+<p>我有着保护什么的责任</p>
+<p>Good and bad, I define these terms</p>
+<p>不知为何，善与恶，我将它们区分得</p>
+<p>Quite clear, no doubt somehow</p>
+<p>明白无误，泾渭分明</p>
+<p>Ahh, but I was so much older then</p>
+<p>啊，昔日我曾苍老</p>
+<p>I’m younger than that now</p>
+<p>如今才风华正茂</p>
+<p>要实现唱每行歌词的功能，可以通过</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(<span class="string">"Ahh, but I was so much older then"</span>);</span><br><span class="line">System.out.println(<span class="string">"I'm younger than that now"</span>);</span><br></pre></td></tr></table></figure>
+<p>又因为这两句歌词为副歌，会反复出现，于是，我们想把这一段代码打包成为一个小的模块去实现</p>
+<p>函数：本质上就是一种将实现某种功能的代码进行整理与打包</p>
+<p>比如说：</p>
+<p>本质上就是我们调用（Calling） Java自带的函数</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(ScreenShows);</span><br></pre></td></tr></table></figure>
+<p>把你要重复调用的内容放在function里面：</p>
+<p>1.定义（definition）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">repeat</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//在my back pages 里面的重复歌词（副歌部分）</span></span><br><span class="line">    System.out.println(<span class="string">"Ahh, but I was so much older then"</span>);</span><br><span class="line">	System.out.println(<span class="string">"I'm younger than that now"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.调用函数（calling）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">repeat();</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>14.函数的参数（Parameters/Arguments ）</title>
+    <url>/2019/10/13/14.%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0ParametersArguments/</url>
+    <content><![CDATA[<h1 id="14-函数的参数（Parameters-Arguments-）"><a href="#14-函数的参数（Parameters-Arguments-）" class="headerlink" title="14.函数的参数（Parameters/Arguments ）"></a>14.函数的参数（Parameters/Arguments ）</h1><p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得 主讲人：William  LX_Lab提供教研与技术支持</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在function定义的时候里面的参数叫做parameters</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fans_show_hands</span><span class="params">(String place)</span></span>&#123;</span><br><span class="line">    <span class="comment">//歌手向不同地点的粉丝们打招呼</span></span><br><span class="line">    System.out.println(<span class="string">"Hello，来自"</span> + place + <span class="string">"的朋友们！你们好！"</span>);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当你在真正调用函数，并且pass进去参数的时候，这个“真实”的参数叫做arguments</span></span><br><span class="line">fans_show_hands(<span class="string">"中国"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> age = <span class="number">18</span>;</span><br><span class="line">calculate_price(age);</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>2.Java基础语法</title>
+    <url>/2019/08/26/2.Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>2.Java基础语法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * This is a example made by William</span></span><br><span class="line"><span class="comment"> * 这个是William的代码示例</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> our_first_package; <span class="comment">// 包 以及这个包的名称</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span></span></span><br><span class="line"><span class="class">/*</span></span><br><span class="line"> * public: access modifier（访问修饰符)/  公共场所（与私人场所对应）</span><br><span class="line"> * 			也就是说，大家都能访问</span><br><span class="line"> * class: 类  /可以把类理解成容器，“人以类聚，物以群分”，一个班的人放到一个教室里面</span><br><span class="line"> * Hello: 类的名字，<span class="number">1</span>.类的名字的文件名字要一致 <span class="number">2</span>.Hello,第一个字母大写！HelloWorld,（NiHao）多个单词的情况下，每个单词首字母大写</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *小括号（） 一般是在方法（函数）后面</span></span><br><span class="line"><span class="comment"> * 大括号&#123;&#125; 代码块 blocks</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"><span class="comment">/* public: access modifier（访问修饰符)/  公共场所（与私人场所对应）</span></span></span><br><span class="line"><span class="function"><span class="comment"> * 为了Java runtime能够去执行，所以需要是公共的，如果不是public，则不能被任何程序运行</span></span></span><br><span class="line"><span class="function"><span class="comment"> * </span></span></span><br><span class="line"><span class="function"><span class="comment"> * static（静态）：JVM(Java的虚拟机)会把我们写的class（类）去加载到memory（内存）里面，所以main method主要的方法必须是静态的</span></span></span><br><span class="line"><span class="function"><span class="comment"> * 假设你删去了static的时候，会报错：</span></span></span><br><span class="line"><span class="function"><span class="comment"> * 错误: main 方法不是类 Hello 中的static, 请将 main 方法定义为:</span></span></span><br><span class="line"><span class="function"><span class="comment"> *  public static void main(String[] args)</span></span></span><br><span class="line"><span class="function"><span class="comment"> *但是这个翻译太烂了，根本看不懂，看我这个版本的：</span></span></span><br><span class="line"><span class="function"><span class="comment"> *Main method is not static in class Hello, please define the main method as : </span></span></span><br><span class="line"><span class="function"><span class="comment"> * public static void main(String[] args)</span></span></span><br><span class="line"><span class="function"><span class="comment"> * </span></span></span><br><span class="line"><span class="function"><span class="comment"> * void:Java设计的时候就有一系列的规定，其中有一个规定每一个method（方法）必须要确定一种返回形式（类型），因为main这个方法并不返回任何东西，所以return type(返回形式)是void这种形式。</span></span></span><br><span class="line"><span class="function"><span class="comment"> * 不能删去void,否则编译无法通过</span></span></span><br><span class="line"><span class="function"><span class="comment"> */</span></span></span><br><span class="line"><span class="function">	</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">	</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.print();</span><br><span class="line">		System.out.println(<span class="string">"2.欢迎来到Java的世界"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//	ctl+/ 就是快速comment写注释的方法1，</span></span><br><span class="line"><span class="comment">//	ctl+shift+/也是一种快速comment写注释的方法2</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 花括号框起来的 叫做方法的主体部分body of the method()，</span></span><br><span class="line"><span class="comment">	 * 也就相当于你要执行什么代码的主体</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line"><span class="comment">//	program statements是按照什么样的语法进行编写的呢？</span></span><br><span class="line"><span class="comment">//选择一个object对象，然后说明你要对他实行/实施什么样的method方法，具体方法里面将parameter参数写入 </span></span><br><span class="line"><span class="comment">//system.out 作为一个整体object对象,对他进行println这样方法的操作，println操作的参数为"欢迎来到Java的世界"</span></span><br><span class="line"><span class="comment">//在eclipse里面运行你程序的方法run as java application,先同时按下alt+shift+x(x为执行的意思)，再按下j</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * public class ClassName &#123; public static void main(String[] args) &#123; program</span></span><br><span class="line"><span class="comment"> * statements &#125;</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>3.数据类型</title>
+    <url>/2019/08/26/3.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<p>3.数据类型</p>
+<h5 id="1-Java主要有8种数据类型："><a href="#1-Java主要有8种数据类型：" class="headerlink" title="1.Java主要有8种数据类型："></a>1.Java主要有8种数据类型：</h5><p>4种：Integer type(整型)</p>
+<p>2种：floating point(浮点型)</p>
+<p>1种：boolean（布尔值）</p>
+<p>1种：character(字符类型)</p>
+<h6 id="补充知识：bit-byte-word"><a href="#补充知识：bit-byte-word" class="headerlink" title="补充知识：bit,byte,word"></a>补充知识：bit,byte,word</h6><p>Bit:又叫做“位”，是计算机中能储存的最小单位</p>
+<p>Byte:又叫做“字节”，一个字节=八个二进制位（1byte=8bit）</p>
+<p>Word：是计算机在处理数据的时候，一次性加工，处理传输的长度就叫做字 </p>
+<h6 id="答疑：一个Word-字-到底是多少byte-bit？"><a href="#答疑：一个Word-字-到底是多少byte-bit？" class="headerlink" title="答疑：一个Word(字)到底是多少byte/bit？"></a>答疑：一个Word(字)到底是多少byte/bit？</h6><p>答：这必须要看CPU的架构。</p>
+<p>8bit：一个word就为一个byte字节，而每个byte又等于八bit位，所以是8bit位的机器</p>
+<p>16bit：一个word就为两个byte字节，而每个byte又等于八bit位，所以是16bit位的机器</p>
+<p>32bit：一个word就为四个byte字节，而每个byte又等于八bit位，所以是32bit位的机器</p>
+<p>64bit：一个word就为八个byte字节，而每个byte又等于八bit位，所以是64bit位的机器</p>
+<h5 id="1-Integer-Type-整型"><a href="#1-Integer-Type-整型" class="headerlink" title="1.Integer Type(整型)"></a>1.Integer Type(整型)</h5><p>1.Byte:1byte (-128——+127)</p>
+<p>2.short:2bytes(-32768—-+32767)</p>
+<p>3.int:4bytes(-2147483648—-+2147483647)正负二十亿左右</p>
+<p>4.long:8bytes(-9223372036854775808—-9223372036854775807)</p>
+<p>WORA(Write once , run anywhere)一次编写，到处运行：JVM</p>
+<h5 id="2-Floating-Point-Type-（浮点型）"><a href="#2-Floating-Point-Type-（浮点型）" class="headerlink" title="2.Floating-Point Type:（浮点型）"></a>2.Floating-Point Type:（浮点型）</h5><ol>
+<li><p>float:4 bytes ±3.4028234E+38F(精确度是6-7位)</p>
+</li>
+<li><p>double: 8 bytes±1.79769313486231570E+308F(精确度是15位)</p>
+</li>
+</ol>
+<h5 id="3-The-char-type-字符类型"><a href="#3-The-char-type-字符类型" class="headerlink" title="3.The char type (字符类型)"></a>3.The char type (字符类型)</h5><ol>
+<li>Char(字符):‘A’</li>
+<li>String（字符串）“A”</li>
+</ol>
+<ol>
+<li>GB18030:信息技术 中文编码字符集</li>
+<li>ASCII: American Standard Code for Information Interchange(美国信息交换标准代码)——显示英语</li>
+<li>ISO 8859-1-ISO 8859-16(涉及到了非常多国家的语言,东西南北欧，泰语，阿拉伯语等等)</li>
+<li>Unicode</li>
+</ol>
+<h5 id="4-The-Boolean-Type-布尔类型-：True-or-False-注意：C-C-0-false-1-true-java不会转换-x-0-不会变成-x-false"><a href="#4-The-Boolean-Type-布尔类型-：True-or-False-注意：C-C-0-false-1-true-java不会转换-x-0-不会变成-x-false" class="headerlink" title="4.The Boolean Type(布尔类型)：True or False (注意：C/C++ 0 false 1 true , java不会转换 x=0 不会变成 x=false)"></a>4.The Boolean Type(布尔类型)：True or False (注意：C/C++ 0 false 1 true , java不会转换 x=0 不会变成 x=false)</h5><p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>4.变量以及常量</title>
+    <url>/2019/08/26/4.%E5%8F%98%E9%87%8F%E4%BB%A5%E5%8F%8A%E5%B8%B8%E9%87%8F/</url>
+    <content><![CDATA[<h5 id="4-变量以及常量"><a href="#4-变量以及常量" class="headerlink" title="4.变量以及常量"></a>4.变量以及常量</h5><h6 id="1-变量需要声明：在Java中每一个变量（Variable）必须要有一个类型-Type"><a href="#1-变量需要声明：在Java中每一个变量（Variable）必须要有一个类型-Type" class="headerlink" title="1.变量需要声明：在Java中每一个变量（Variable）必须要有一个类型(Type)"></a>1.变量需要声明：在Java中每一个变量（Variable）必须要有一个类型(Type)</h6><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> days;</span><br><span class="line"><span class="keyword">long</span> population;</span><br><span class="line"><span class="keyword">boolean</span> man;</span><br><span class="line"><span class="keyword">double</span> income;</span><br><span class="line"><span class="keyword">double</span> number;</span><br></pre></td></tr></table></figure>
+<h6 id="2-变量声明之后需要初始化"><a href="#2-变量声明之后需要初始化" class="headerlink" title="2.变量声明之后需要初始化"></a>2.变量声明之后需要初始化</h6><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> days;</span><br><span class="line">System.out.println(days);</span><br></pre></td></tr></table></figure>
+<p>ERROR-variable not initialized!</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">可以这样初始化</span><br><span class="line"><span class="keyword">int</span> days;</span><br><span class="line">days = <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line">当然也可以这样初始化并放在不同位置</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> days =<span class="number">7</span>;</span><br><span class="line">System.out.println(days);</span><br><span class="line"><span class="keyword">double</span> incomes =<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>6.用户输入</title>
+    <url>/2019/08/26/6.%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5/</url>
+    <content><![CDATA[<p>6.用户输入</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> our_first_package;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Reader</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner reader = <span class="keyword">new</span> Scanner(System.in);<span class="comment">//读取System.in的信息</span></span><br><span class="line">		System.out.println(<span class="string">"您好！我是一个交互式的程序，请您输入一个数字吧："</span>);</span><br><span class="line">		<span class="keyword">int</span> num = reader.nextInt();</span><br><span class="line">		System.out.println(<span class="string">"输入的好！你刚刚输入的数字是："</span>+num);</span><br><span class="line">				</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>5.Java10，11，12新特性</title>
+    <url>/2019/08/26/5.JAVA101112%E4%B9%8B%E5%90%8E%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h5 id="5-Java10，11，12新特性"><a href="#5-Java10，11，12新特性" class="headerlink" title="5.Java10，11，12新特性"></a>5.Java10，11，12新特性</h5><p>希望大家能够掌握“思考问题”的能力，希望大家站在语言设计者的角度去思考问题。</p>
+<p>Java 10 之后的新写法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> Days = <span class="number">7</span>;</span><br></pre></td></tr></table></figure>
+<p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>7.常量</title>
+    <url>/2019/10/13/7.%E5%B8%B8%E9%87%8F/</url>
+    <content><![CDATA[<p>7.常量</p>
+<p>1.常量是永远不变化的（constant）</p>
+<p>2.通常是static静态的</p>
+<p>3.约定俗成的一个准则(Convention)：我们如果需要用到常量的时候，把相应的英文/拼音全部大写</p>
+<p>4.改变器（modifier）：声明“变量”的时候，对变量进行“修改”，把它最终确定下来，为常量</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> our_first_package;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Constants</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(Math.PI);</span><br><span class="line">				</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> our_first_package;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Constants</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WIDTH = <span class="number">800</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> HEIGHT = <span class="number">600</span>;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(Constants.WIDTH);</span><br><span class="line">				</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>8.控制流（Control Flow）</title>
+    <url>/2019/10/13/8.%E6%8E%A7%E5%88%B6%E6%B5%81/</url>
+    <content><![CDATA[<p>8.控制流（Control Flow）</p>
+<p>1.条件判断（Condition Statement）</p>
+<p>下雨 下了/没下</p>
+<p>boolean isRaining = true;</p>
+<p>if (下雨) statement</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> our_first_package;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">What_to_Do</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">boolean</span> isRaining = <span class="keyword">true</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (isRaining) &#123;</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">"因为外面正在下着大雨，要不就不出去咯？"</span>);</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">"因为外面没有下雨，要不咱们现在出去约一波！"</span>);</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>8.控制流（Control Flow）</title>
+    <url>/2019/10/13/9.%E6%8E%A7%E5%88%B6%E6%B5%812/</url>
+    <content><![CDATA[<p>8.控制流（Control Flow）</p>
+<p>2.多条件判断（else if）</p>
+<p>下雨 下了/没下</p>
+<p>boolean isRaining = true;</p>
+<p>if (下雨) statement</p>
+<p>心情 好/不好</p>
+<p>else if（心情）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> our_first_package;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">What_to_Do</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">boolean</span> isRaining = <span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">boolean</span> BadMood = <span class="keyword">false</span>;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (isRaining) &#123;</span><br><span class="line">			System.out.println(<span class="string">"因为外面正在下着大雨，要不就不出去咯？"</span>);	</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (BadMood)&#123;</span><br><span class="line">			System.out.println(<span class="string">"虽然天气不错，但是今天心情不好，不约不约！"</span>);					</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"因为外面没有下雨，而且今天心情很不错，要不咱们现在出去约一波！"</span>);	</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>9.控制流（Control Flow）</title>
+    <url>/2019/10/13/9.%E6%8E%A7%E5%88%B6%E6%B5%813/</url>
+    <content><![CDATA[<p>9.控制流（Control Flow）</p>
+<p>2.布林值表达式boolean expression</p>
+<p>下雨 ？后面接的不是简单的true or false，而是一个expression（表达式）的形式，不直接告诉你正确还是错误，根据表达式的运算结果决定正确还是错误</p>
+<p>boolean isRaining =  2*2 &gt;3; （本质上就是=true）</p>
+<p>boolean isRaining =  6 != 8; (本质上就是= true) </p>
+<p>练习：写一个小程序，能够计算公交车费，1.年龄小于12岁的乘客，免票 2.年龄大于65岁的乘客，免票，3.持有学生证能够，半价优惠</p>
+<p>tip:多个判断（if/else if/boolean/boolean expression）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> our_first_package;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TicketPriceCal</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> ticketPrice = <span class="number">10</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> age=<span class="number">23</span>;</span><br><span class="line">		<span class="keyword">boolean</span> isStudent = <span class="keyword">false</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (age &lt;=<span class="number">12</span>) &#123;</span><br><span class="line">			ticketPrice = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (age &gt;<span class="number">65</span>) &#123;</span><br><span class="line">			ticketPrice=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(isStudent) &#123;</span><br><span class="line">			ticketPrice=<span class="number">5</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"您好，请投币："</span>+ticketPrice);	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
 ]]></content>
   </entry>
 </search>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="乐学知识，偶得美好">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    2.Java基础语法 |
+    
+    乐学·偶得</title>
+  
+    <link rel="shortcut icon" href="/lxod_logo.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-2.Java基础语法" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2.Java基础语法
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/08/26/2.Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="article-date">
+  <time datetime="2019-08-25T23:28:38.000Z" itemprop="datePublished">2019-08-26</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <p>2.Java基础语法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * This is a example made by William</span></span><br><span class="line"><span class="comment"> * 这个是William的代码示例</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> our_first_package; <span class="comment">// 包 以及这个包的名称</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span></span></span><br><span class="line"><span class="class">/*</span></span><br><span class="line"> * public: access modifier（访问修饰符)/  公共场所（与私人场所对应）</span><br><span class="line"> * 			也就是说，大家都能访问</span><br><span class="line"> * class: 类  /可以把类理解成容器，“人以类聚，物以群分”，一个班的人放到一个教室里面</span><br><span class="line"> * Hello: 类的名字，<span class="number">1</span>.类的名字的文件名字要一致 <span class="number">2</span>.Hello,第一个字母大写！HelloWorld,（NiHao）多个单词的情况下，每个单词首字母大写</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *小括号（） 一般是在方法（函数）后面</span></span><br><span class="line"><span class="comment"> * 大括号&#123;&#125; 代码块 blocks</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"><span class="comment">/* public: access modifier（访问修饰符)/  公共场所（与私人场所对应）</span></span></span><br><span class="line"><span class="function"><span class="comment"> * 为了Java runtime能够去执行，所以需要是公共的，如果不是public，则不能被任何程序运行</span></span></span><br><span class="line"><span class="function"><span class="comment"> * </span></span></span><br><span class="line"><span class="function"><span class="comment"> * static（静态）：JVM(Java的虚拟机)会把我们写的class（类）去加载到memory（内存）里面，所以main method主要的方法必须是静态的</span></span></span><br><span class="line"><span class="function"><span class="comment"> * 假设你删去了static的时候，会报错：</span></span></span><br><span class="line"><span class="function"><span class="comment"> * 错误: main 方法不是类 Hello 中的static, 请将 main 方法定义为:</span></span></span><br><span class="line"><span class="function"><span class="comment"> *  public static void main(String[] args)</span></span></span><br><span class="line"><span class="function"><span class="comment"> *但是这个翻译太烂了，根本看不懂，看我这个版本的：</span></span></span><br><span class="line"><span class="function"><span class="comment"> *Main method is not static in class Hello, please define the main method as : </span></span></span><br><span class="line"><span class="function"><span class="comment"> * public static void main(String[] args)</span></span></span><br><span class="line"><span class="function"><span class="comment"> * </span></span></span><br><span class="line"><span class="function"><span class="comment"> * void:Java设计的时候就有一系列的规定，其中有一个规定每一个method（方法）必须要确定一种返回形式（类型），因为main这个方法并不返回任何东西，所以return type(返回形式)是void这种形式。</span></span></span><br><span class="line"><span class="function"><span class="comment"> * 不能删去void,否则编译无法通过</span></span></span><br><span class="line"><span class="function"><span class="comment"> */</span></span></span><br><span class="line"><span class="function">	</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">	</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		System.out.print();</span><br><span class="line">		System.out.println(<span class="string">"2.欢迎来到Java的世界"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//	ctl+/ 就是快速comment写注释的方法1，</span></span><br><span class="line"><span class="comment">//	ctl+shift+/也是一种快速comment写注释的方法2</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 花括号框起来的 叫做方法的主体部分body of the method()，</span></span><br><span class="line"><span class="comment">	 * 也就相当于你要执行什么代码的主体</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line"><span class="comment">//	program statements是按照什么样的语法进行编写的呢？</span></span><br><span class="line"><span class="comment">//选择一个object对象，然后说明你要对他实行/实施什么样的method方法，具体方法里面将parameter参数写入 </span></span><br><span class="line"><span class="comment">//system.out 作为一个整体object对象,对他进行println这样方法的操作，println操作的参数为"欢迎来到Java的世界"</span></span><br><span class="line"><span class="comment">//在eclipse里面运行你程序的方法run as java application,先同时按下alt+shift+x(x为执行的意思)，再按下j</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * public class ClassName &#123; public static void main(String[] args) &#123; program</span></span><br><span class="line"><span class="comment"> * statements &#125;</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p>乐学偶得版权所有  公众号：乐学Fintech  正版视频课程 网易云课堂：乐学偶得</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="lexueoude.github.io/2019/08/26/2.Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" data-id="ckatxfhp30006e7yv55ks9jed"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2019/08/26/4.%E5%8F%98%E9%87%8F%E4%BB%A5%E5%8F%8A%E5%B8%B8%E9%87%8F/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            4.变量以及常量
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/08/26/3.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">3.数据类型</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>
