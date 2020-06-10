@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="乐学知识，偶得美好">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    【Java进阶】之【类继承包】 |
+    
+    乐学·偶得</title>
+  
+    <link rel="shortcut icon" href="/lxod_logo.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-【Java进阶】之【类继承包】" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【Java进阶】之【类继承包】
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B%E3%80%90%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%8C%85%E3%80%91/" class="article-date">
+  <time datetime="2020-06-10T14:31:49.015Z" itemprop="datePublished">2020-06-10</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <hr>
+<h2 id="title-【Java进阶】之【类继承包】"><a href="#title-【Java进阶】之【类继承包】" class="headerlink" title="title:【Java进阶】之【类继承包】"></a>title:【Java进阶】之【类继承包】</h2><h1 id="【Java进阶】之【类与继承】"><a href="#【Java进阶】之【类与继承】" class="headerlink" title="【Java进阶】之【类与继承】"></a>【Java进阶】之【类与继承】</h1><h2 id="1-类Class"><a href="#1-类Class" class="headerlink" title="1.类Class"></a>1.类Class</h2><p>其实可以想象成一个“工厂”，能够按照一定的规格，批量生成出产品</p>
+<p>主要的main里面</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> advanced2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args )</span> </span>&#123;</span><br><span class="line">		Machine mach1 = <span class="keyword">new</span> Machine();</span><br><span class="line"></span><br><span class="line">		mach1.transform();</span><br><span class="line">		mach1.talk();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你在具体的生产这个机器人的机器里面这样写：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> advanced2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Machine</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">transform</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我开始变形了！"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"我这个机器人正在说话"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-包package"><a href="#2-包package" class="headerlink" title="2.包package"></a>2.包package</h2><p>包可以作为分类的工具，也可以在调用的时候通过整理import自动补充</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> package1.package2.package3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IronMan</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ocean;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AquaMan</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ocean;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Fish</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> package1.package2.package3;</span><br><span class="line"><span class="keyword">import</span> ocean.AquaMan;</span><br><span class="line"><span class="keyword">import</span> ocean.Fish;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		AquaMan HW = <span class="keyword">new</span> AquaMan();</span><br><span class="line">		Fish fish01 = <span class="keyword">new</span> Fish();</span><br><span class="line">		IronMan Tony01 =<span class="keyword">new</span> IronMan();</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B%E3%80%90%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%8C%85%E3%80%91/" data-id="ckb9ghm5h000apvyvg14xbnl2"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/10/%E3%80%90%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%91%E3%80%90JavaWeb%E3%80%9112.JSP%E9%87%8D%E8%A6%81tag%E5%B0%8F%E7%BB%93/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            【高薪笔记】【JavaWeb】12.JSP重要tag小结
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/10/%E3%80%90%E8%AF%BE%E5%90%8E%E9%85%8D%E5%A5%97%E5%A4%8D%E4%B9%A0%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%9119.%E5%87%BD%E6%95%B0%E6%80%BB%E5%A4%8D%E4%B9%A0%E4%B8%8E%E6%80%9D%E6%83%B3%E6%80%BB%E7%BB%93/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">【课后配套复习高薪笔记】19.函数总复习与思想总结</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>

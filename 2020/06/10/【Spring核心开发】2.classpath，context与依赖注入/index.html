@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="乐学知识，偶得美好">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    【Spring核心开发】2.classpath，context与依赖注入 |
+    
+    乐学·偶得</title>
+  
+    <link rel="shortcut icon" href="/lxod_logo.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-【Spring核心开发】2.classpath，context与依赖注入" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【Spring核心开发】2.classpath，context与依赖注入
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%912.classpath%EF%BC%8Ccontext%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" class="article-date">
+  <time datetime="2020-06-10T14:31:49.007Z" itemprop="datePublished">2020-06-10</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <hr>
+<h2 id="title-【Spring核心开发】2"><a href="#title-【Spring核心开发】2" class="headerlink" title="title:【Spring核心开发】2"></a>title:【Spring核心开发】2</h2><h1 id="【Spring核心开发】2-classpath，context与依赖注入"><a href="#【Spring核心开发】2-classpath，context与依赖注入" class="headerlink" title="【Spring核心开发】2.classpath，context与依赖注入"></a>【Spring核心开发】2.classpath，context与依赖注入</h1><p>乐学偶得版权所有 公众号：乐学Fintech 正版课程 网易云课堂：乐学偶得 </p>
+<p>主讲人：William</p>
+<p> LX_Lab提供教研与技术支持</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lexueoude.spring.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Address</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String street;</span><br><span class="line">    <span class="keyword">private</span> String postcode;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Address</span><span class="params">(String street, String postcode)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.street = street;</span><br><span class="line">        <span class="keyword">this</span>.postcode = postcode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Address&#123;"</span> +</span><br><span class="line">                <span class="string">"street='"</span> + street + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", postcode='"</span> + postcode + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lexueoude.spring.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.support.FileSystemXmlApplicationContext;</span><br><span class="line"><span class="comment">//import org.springframework.context.support.FileSystemXmlApplicationContext;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        ApplicationContext context = <span class="keyword">new</span> FileSystemXmlApplicationContext(<span class="string">"beans.xml"</span>);</span><br><span class="line"></span><br><span class="line">        Person person = (Person)context.getBean(<span class="string">"person"</span>);</span><br><span class="line">        person.speak();</span><br><span class="line"></span><br><span class="line">        Address address = (Address)context.getBean(<span class="string">"address"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(address);</span><br><span class="line"></span><br><span class="line">        System.out.println(person);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        ((FileSystemXmlApplicationContext)context).close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lexueoude.spring.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> incomeNum;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Address address;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(<span class="keyword">int</span> id, String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setIncomeNum</span><span class="params">(<span class="keyword">int</span> incomeNum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.incomeNum = incomeNum;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello everyone , I am William saying hello from our project"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                <span class="string">"id="</span> + id +</span><br><span class="line">                <span class="string">", name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", incomeNum="</span> + incomeNum +</span><br><span class="line">                <span class="string">", address="</span> + address +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAddress</span><span class="params">(Address address)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.address = address;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">       xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">       xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;bean id=<span class="string">"person"</span></span><br><span class="line">          <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.lexueoude.spring.test.Person"</span>&gt;</span><br><span class="line">        &lt;constructor-arg value="88888888"&gt;&lt;/constructor-arg&gt;</span><br><span class="line">        &lt;constructor-arg value="William"&gt;&lt;/constructor-arg&gt;</span><br><span class="line">        &lt;property name="incomeNum" value="2000"&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name="address" ref="address"&gt;&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"address"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.lexueoude.spring.test.Address"</span>&gt;</span><br><span class="line">        &lt;constructor-arg name="street" value="lexueoude"&gt;&lt;/constructor-arg&gt;</span><br><span class="line">        &lt;constructor-arg name="postcode" value="1234567"&gt;&lt;/constructor-arg&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%912.classpath%EF%BC%8Ccontext%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" data-id="ckb9ghm5i000cpvyv3k8r4f2k"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%918.%E5%88%97%E8%A1%A8beans/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            【Spring核心开发】8.列表beans
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%916.P%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">【Spring核心开发】6.P命名空间</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>

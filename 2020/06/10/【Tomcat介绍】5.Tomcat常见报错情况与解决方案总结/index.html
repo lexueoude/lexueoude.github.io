@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="乐学知识，偶得美好">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    【Tomcat介绍】5.Tomcat常见报错情况与解决方案总结 |
+    
+    乐学·偶得</title>
+  
+    <link rel="shortcut icon" href="/lxod_logo.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-【Tomcat介绍】5.Tomcat常见报错情况与解决方案总结" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【Tomcat介绍】5.Tomcat常见报错情况与解决方案总结
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/10/%E3%80%90Tomcat%E4%BB%8B%E7%BB%8D%E3%80%915.Tomcat%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E6%83%85%E5%86%B5%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2020-06-10T14:31:49.027Z" itemprop="datePublished">2020-06-10</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <hr>
+<h2 id="title-【Tomcat介绍】5"><a href="#title-【Tomcat介绍】5" class="headerlink" title="title:【Tomcat介绍】5"></a>title:【Tomcat介绍】5</h2><h1 id="【Tomcat介绍】5-Tomcat常见报错情况与解决方案总结"><a href="#【Tomcat介绍】5-Tomcat常见报错情况与解决方案总结" class="headerlink" title="【Tomcat介绍】5.Tomcat常见报错情况与解决方案总结"></a>【Tomcat介绍】5.Tomcat常见报错情况与解决方案总结</h1><p>乐学偶得出品</p>
+<p>主讲人：William</p>
+<p>LX_Lab教研团队提供教研支持</p>
+<p>乐学偶得版权所有 公众号： 乐学Fintech 正版视频 网易云课堂搜索 ： 乐学偶得</p>
+<p>如果按照之前我们笔记的配置仍不能成功的话，一般来说有以下几种情况：</p>
+<p>1、java配置路径有问题，具体参考我们java入门阶段的路径与环境变量的配置 </p>
+<p>2、项目未添加tomcat驱动， （一般提示The superclass “javax.servlet.http.HttpServlet” was not found on the Java Build Path属于这一类） </p>
+<p>参考解决方法：保证已经装了tomcat的情况下，eclipse中选择对应项目右键build path -&gt;Configure build path -&gt; Java build path-&gt;选择Libraries -&gt;点击右方Add Library… -&gt;Server Runtime -&gt;选择自己的tomcat服务器-&gt;Finish </p>
+<p>3、项目中的web.xml中配置的servlet的名称写错，tomcat无法识别， （一般控制台提示java.util.concurrent.ExecutionException属于这种问题）</p>
+<p>参考解决方法：检查自己配置的servlet名称和路径是否正确。 </p>
+<p>4、端口被占用，一般由于上一次非正常关闭tomcat或eclipse导致，（ 一般控制台会报：Port 8080  is already in use） </p>
+<p>参考解决方法：</p>
+<p>1.修改端口号（一般情况下我们不建议修改端口,如果一定要去修改，可以在Tomcat根目录（/conf/Server.xml 里面修改）</p>
+<p>2.关闭被占用的端口进程:如果是windows系统，打开CMD输入 </p>
+<p>   1）netstat -ano|findstr 8080看到所有使用的进程，</p>
+<p>   2）taskkill /pid 8080 /f （这里填写进程信息中最后一个数字编号）</p>
+<p>   3）重启Tomcat</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Tomcat%E4%BB%8B%E7%BB%8D%E3%80%915.Tomcat%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E6%83%85%E5%86%B5%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/" data-id="ckb9ghm5r000opvyvcub0e8fw"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/10/%E3%80%90Tomcat%E4%BB%8B%E7%BB%8D%E3%80%913.Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%85%8D%E7%BD%AE/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            【Tomcat介绍】3.Tomcat服务器的配置
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/10/%E3%80%90%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%91%E3%80%90JavaWeb%E3%80%917.%E5%9C%A8JSP%E4%B8%AD%E5%AF%BC%E5%85%A5Java%20Class/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">【高薪笔记】【JavaWeb】7.在JSP中导入Java Class</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>

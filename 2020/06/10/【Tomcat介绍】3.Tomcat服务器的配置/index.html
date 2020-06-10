@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="乐学知识，偶得美好">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    【Tomcat介绍】3.Tomcat服务器的配置 |
+    
+    乐学·偶得</title>
+  
+    <link rel="shortcut icon" href="/lxod_logo.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-【Tomcat介绍】3.Tomcat服务器的配置" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【Tomcat介绍】3.Tomcat服务器的配置
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/10/%E3%80%90Tomcat%E4%BB%8B%E7%BB%8D%E3%80%913.Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time datetime="2020-06-10T14:31:49.028Z" itemprop="datePublished">2020-06-10</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <hr>
+<h2 id="title-【Tomcat介绍】3"><a href="#title-【Tomcat介绍】3" class="headerlink" title="title:【Tomcat介绍】3"></a>title:【Tomcat介绍】3</h2><h1 id="【Tomcat介绍】3-Tomcat服务器的配置"><a href="#【Tomcat介绍】3-Tomcat服务器的配置" class="headerlink" title="【Tomcat介绍】3.Tomcat服务器的配置"></a>【Tomcat介绍】3.Tomcat服务器的配置</h1><p>乐学偶得出品</p>
+<p>主讲人：William</p>
+<p>LX_Lab教研团队提供教研支持</p>
+<p>乐学偶得版权所有 公众号： 乐学Fintech 正版视频 网易云课堂搜索 ： 乐学偶得</p>
+<p>一般来说大家学到这里应该在电脑上已经安装好了JDK，Tomcat服务器运行的前置条件就是JDK已经安装好。</p>
+<p>不错这个时候也是检验大家系统配置是否正确的时候，我们提示几个坑：</p>
+<p>例如在环境变量配置中，我们需要注意：</p>
+<ol>
+<li>JAVA_HOME 这里需要填写jdk的安装目录。比如一般默认安装的目录是在c盘（C:\Program Files\Java\jdk相应版本）</li>
+<li>CLASSPATH=%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</li>
+<li>path=%JAVA_HOME%\bin;</li>
+</ol>
+<p>接下来我们配置Tomcat的环境变量：</p>
+<p>CATALINA_HOME=tomcat的安装路径<br>如    （D:\apache-tomcat-9.0.11）<br>CATALINA_BASE= tomcat的安装路径<br>如（D:\apache-tomcat-9.0.11）<br>CLASSPATH=%CATALINA_HOME%\lib\servlet-api.jar;<br>如（%CATALINA_HOME%\lib\servlet-api.jar;）</p>
+<p>这个名字有些奇怪，是因为历史原因：在Tomcat 4以前，用的就是TOMCAT_HOME来表示Tomcat的安装目录，在Tomcat 4以后，采用了新的Servlet容器Catalina，所以环境变量的名字也改为了CATALINA_HOME</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Tomcat%E4%BB%8B%E7%BB%8D%E3%80%913.Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%85%8D%E7%BD%AE/" data-id="ckb9ghm5q000lpvyvfn37gt0g"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E3%80%90%E6%9E%84%E9%80%A0%E5%99%A8%E3%80%911.%E6%9E%84%E9%80%A0%E5%99%A8%E5%88%9D%E6%8E%A2/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            【Java进阶】【构造器】1.构造器初探
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/10/%E3%80%90Tomcat%E4%BB%8B%E7%BB%8D%E3%80%915.Tomcat%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E6%83%85%E5%86%B5%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">【Tomcat介绍】5.Tomcat常见报错情况与解决方案总结</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>

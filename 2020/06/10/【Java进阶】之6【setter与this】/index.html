@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="乐学知识，偶得美好">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    【Java进阶】之6【setter与this】 |
+    
+    乐学·偶得</title>
+  
+    <link rel="shortcut icon" href="/lxod_logo.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-【Java进阶】之6【setter与this】" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【Java进阶】之6【setter与this】
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B6%E3%80%90setter%E4%B8%8Ethis%E3%80%91/" class="article-date">
+  <time datetime="2020-06-10T14:31:49.009Z" itemprop="datePublished">2020-06-10</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <hr>
+<h2 id="title-【Java进阶】之6【setter与this】"><a href="#title-【Java进阶】之6【setter与this】" class="headerlink" title="title:【Java进阶】之6【setter与this】"></a>title:【Java进阶】之6【setter与this】</h2><h1 id="【Java进阶】之【setter与this】"><a href="#【Java进阶】之【setter与this】" class="headerlink" title="【Java进阶】之【setter与this】"></a>【Java进阶】之【setter与this】</h1><h2 id="我们可以通过setter设置数据，在名字相同的情况下用this指代创建的实例，当然，我们也可以一次性set一系列数据"><a href="#我们可以通过setter设置数据，在名字相同的情况下用this指代创建的实例，当然，我们也可以一次性set一系列数据" class="headerlink" title="我们可以通过setter设置数据，在名字相同的情况下用this指代创建的实例，当然，我们也可以一次性set一系列数据"></a>我们可以通过setter设置数据，在名字相同的情况下用this指代创建的实例，当然，我们也可以一次性set一系列数据</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Machine</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAll</span><span class="params">(String name,<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		setName(name);</span><br><span class="line">		setAge(age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Machine machine01 = <span class="keyword">new</span> Machine();</span><br><span class="line"><span class="comment">//		machine01.name="William01";</span></span><br><span class="line"><span class="comment">//		machine01.age = 1;</span></span><br><span class="line">		</span><br><span class="line"><span class="comment">//		machine01.setName("Tom");</span></span><br><span class="line"><span class="comment">//		machine01.setAge(1);</span></span><br><span class="line">		machine01.setAll(<span class="string">"William_Tommy_LXOD"</span>, <span class="number">888</span>);</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"我是一个机器，我的名字叫做"</span>+ machine01.getName()+<span class="string">"我是年龄是"</span>+machine01.getAge());</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B6%E3%80%90setter%E4%B8%8Ethis%E3%80%91/" data-id="ckb9ghm5g0008pvyvb8kf3j1z"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B4%E3%80%90%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%E3%80%911.%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%E6%80%BB%E7%BB%93/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            【Java进阶】之4【访问修饰符】1.访问修饰符总结
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%911.Spring%E7%9A%84HelloWorld/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">【Spring核心开发】1.Spring的HelloWorld</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="乐学知识，偶得美好">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    【高薪笔记】【JavaWeb】7.在JSP中导入Java Class |
+    
+    乐学·偶得</title>
+  
+    <link rel="shortcut icon" href="/lxod_logo.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-【高薪笔记】【JavaWeb】7.在JSP中导入Java Class" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【高薪笔记】【JavaWeb】7.在JSP中导入Java Class
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/10/%E3%80%90%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%91%E3%80%90JavaWeb%E3%80%917.%E5%9C%A8JSP%E4%B8%AD%E5%AF%BC%E5%85%A5Java%20Class/" class="article-date">
+  <time datetime="2020-06-10T14:31:49.026Z" itemprop="datePublished">2020-06-10</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <hr>
+<h2 id="title-【高薪笔记】【JavaWeb】7"><a href="#title-【高薪笔记】【JavaWeb】7" class="headerlink" title="title:【高薪笔记】【JavaWeb】7"></a>title:【高薪笔记】【JavaWeb】7</h2><h1 id="【Java-Web核心开发】7-在JSP中导入Java-Class"><a href="#【Java-Web核心开发】7-在JSP中导入Java-Class" class="headerlink" title="【Java Web核心开发】7.在JSP中导入Java Class"></a>【Java Web核心开发】7.在JSP中导入Java Class</h1><p>在JSP中通过import导入相应的class</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">    pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;欢迎大家来到乐学偶得的Java课程，这个页面是JSP页面哦~&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;%@ page <span class="keyword">import</span>= <span class="string">"java.util.Date, testpackage.*"</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;% String text = <span class="string">"大家好，欢迎大家来到乐学偶得的Java系列课程，今天是："</span>;out.println(text);%&gt;</span><br><span class="line"></span><br><span class="line">&lt;%= <span class="keyword">new</span> Date() %&gt;</span><br><span class="line"></span><br><span class="line">&lt;%</span><br><span class="line"></span><br><span class="line">TextOutput textOut = <span class="keyword">new</span> TextOutput();</span><br><span class="line">out.println(textOut.getInfo());</span><br><span class="line"></span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>在Java Resource里面自定义class</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> testpackage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TextOutput</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"这段文字是来自testpackage包里面的TextOutput里面的getInfo()"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%91%E3%80%90JavaWeb%E3%80%917.%E5%9C%A8JSP%E4%B8%AD%E5%AF%BC%E5%85%A5Java%20Class/" data-id="ckb9ghm65001lpvyvdfnn9jfp"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/10/%E3%80%90Tomcat%E4%BB%8B%E7%BB%8D%E3%80%915.Tomcat%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E6%83%85%E5%86%B5%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            【Tomcat介绍】5.Tomcat常见报错情况与解决方案总结
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/10/%E3%80%90%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%91%E3%80%90JavaWeb%E3%80%913.JSP%E4%BB%A5%E5%8F%8A%E5%85%B6%E7%AE%80%E5%8D%95%E8%AF%AD%E6%B3%95/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">【高薪笔记】【JavaWeb】3.JSP以及其简单语法</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>

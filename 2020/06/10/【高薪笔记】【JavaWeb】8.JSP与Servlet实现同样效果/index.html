@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="乐学知识，偶得美好">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    【高薪笔记】【JavaWeb】8.JSP与Servlet实现同样效果 |
+    
+    乐学·偶得</title>
+  
+    <link rel="shortcut icon" href="/lxod_logo.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-【高薪笔记】【JavaWeb】8.JSP与Servlet实现同样效果" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【高薪笔记】【JavaWeb】8.JSP与Servlet实现同样效果
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/10/%E3%80%90%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%91%E3%80%90JavaWeb%E3%80%918.JSP%E4%B8%8EServlet%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%A0%B7%E6%95%88%E6%9E%9C/" class="article-date">
+  <time datetime="2020-06-10T14:31:49.011Z" itemprop="datePublished">2020-06-10</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <hr>
+<h2 id="title-【高薪笔记】【JavaWeb】8"><a href="#title-【高薪笔记】【JavaWeb】8" class="headerlink" title="title:【高薪笔记】【JavaWeb】8"></a>title:【高薪笔记】【JavaWeb】8</h2><h1 id="【Java-Web核心开发】8-JSP与Servlet实现同样效果"><a href="#【Java-Web核心开发】8-JSP与Servlet实现同样效果" class="headerlink" title="【Java Web核心开发】8.JSP与Servlet实现同样效果"></a>【Java Web核心开发】8.JSP与Servlet实现同样效果</h1><p>通过直接编写Servlet的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> testpackage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Servlet implementation class URLParameters</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/URLParameters"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">URLParameters</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">       </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@see</span> HttpServlet#HttpServlet()</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">URLParameters</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="comment">// TODO Auto-generated constructor stub</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@see</span> HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		String id = request.getParameter(<span class="string">"id"</span>);</span><br><span class="line">		String UserName = request.getParameter(<span class="string">"UserName"</span>);</span><br><span class="line">		String Gender = request.getParameter(<span class="string">"Gender"</span>);</span><br><span class="line">		</span><br><span class="line">		PrintWriter out = response.getWriter();</span><br><span class="line">	</span><br><span class="line">		out.println(<span class="string">"&lt;html&gt;"</span>);</span><br><span class="line">		out.println(<span class="string">"The id parameter is :"</span>+ id);</span><br><span class="line">		out.println(<span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">		out.println(<span class="string">"The UserName parameter is :"</span>+ UserName);</span><br><span class="line">		out.println(<span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">		out.println(<span class="string">"The Gender parameter is :"</span>+ Gender);</span><br><span class="line">		out.println(<span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">		out.println(<span class="string">"&lt;/html&gt;"</span>);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@see</span> HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		doGet(request, response);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是，我们可以直接在JSP文件中进行修改</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=ISO-8859-1"</span></span><br><span class="line">    pageEncoding=<span class="string">"ISO-8859-1"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"ISO-8859-1"</span>&gt;</span><br><span class="line">&lt;title&gt;<span class="function">URL Parameter Test <span class="title">Page</span> <span class="params">(JSP)</span>&lt;/title&gt;</span></span><br><span class="line"><span class="function">&lt;/head&gt;</span></span><br><span class="line"><span class="function">&lt;body&gt;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&lt;%</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">String UserName </span>= request.getParameter(<span class="string">"UserName"</span>);</span><br><span class="line"></span><br><span class="line">out.println(<span class="string">"The User Name Parameter is :"</span> + UserName);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%91%E3%80%90JavaWeb%E3%80%918.JSP%E4%B8%8EServlet%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%A0%B7%E6%95%88%E6%9E%9C/" data-id="ckb9ghm6d001npvyv0x7jb22t"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/10/%E3%80%90%E8%AF%BE%E5%90%8E%E9%85%8D%E5%A5%97%E5%A4%8D%E4%B9%A0%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%9114.%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0ParametersArguments/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            【课后配套复习高薪笔记】14.函数的参数ParametersArguments
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/10/%E3%80%90%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%91%E3%80%90JavaWeb%E3%80%9110.JSP%E4%B8%AD%E9%80%9A%E8%BF%87java%E4%BB%A3%E7%A0%81%E5%86%99%E9%80%BB%E8%BE%91%E5%88%A4%E6%96%AD/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">【高薪笔记】【JavaWeb】10.JSP中通过java代码写逻辑判断</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>

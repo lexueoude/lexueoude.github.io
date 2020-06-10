@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="乐学知识，偶得美好">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    【Java进阶】之2【构造器】构造器初探 |
+    
+    乐学·偶得</title>
+  
+    <link rel="shortcut icon" href="/lxod_logo.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-【Java进阶】之2【构造器】构造器初探" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【Java进阶】之2【构造器】构造器初探
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B2%E3%80%90%E6%9E%84%E9%80%A0%E5%99%A8%E3%80%91%E6%9E%84%E9%80%A0%E5%99%A8%E5%88%9D%E6%8E%A2/" class="article-date">
+  <time datetime="2020-06-10T14:31:49.039Z" itemprop="datePublished">2020-06-10</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <hr>
+<h2 id="title-【Java进阶】之2【构造器】构造器初探"><a href="#title-【Java进阶】之2【构造器】构造器初探" class="headerlink" title="title:【Java进阶】之2【构造器】构造器初探"></a>title:【Java进阶】之2【构造器】构造器初探</h2><h1 id="【Java进阶】之【Constructor】"><a href="#【Java进阶】之【Constructor】" class="headerlink" title="【Java进阶】之【Constructor】"></a>【Java进阶】之【Constructor】</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> advanced;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Machine</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String UserName;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> ID;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Machine</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>(<span class="string">"Tom"</span>,<span class="number">6</span>);</span><br><span class="line">		System.out.println(<span class="string">"This is the  first Constructor, Be Aware!"</span>);</span><br><span class="line">		</span><br><span class="line">		UserName = <span class="string">"William"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Machine</span><span class="params">(String UserName)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"This is a second Constructor! Watch Out!"</span>);</span><br><span class="line">		<span class="keyword">this</span>.UserName = UserName;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Machine</span><span class="params">(String UserName, <span class="keyword">int</span> ID)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"This is a third Constructor! I am soooo Coool!"</span>);</span><br><span class="line">		<span class="keyword">this</span>.UserName = UserName;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConstructorApp</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Machine machine1 = <span class="keyword">new</span> Machine();</span><br><span class="line"><span class="comment">//		Machine machine2 = new Machine("William The Secend");</span></span><br><span class="line"><span class="comment">//		Machine machine3 = new Machine("William The Third",3);</span></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B2%E3%80%90%E6%9E%84%E9%80%A0%E5%99%A8%E3%80%91%E6%9E%84%E9%80%A0%E5%99%A8%E5%88%9D%E6%8E%A2/" data-id="ckb9ghm5b0004pvyv5qie1knz"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/10/%E3%80%90%E8%AF%BE%E5%90%8E%E9%85%8D%E5%A5%97%E5%A4%8D%E4%B9%A0%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%919.%E6%8E%A7%E5%88%B6%E6%B5%812/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            【课后配套复习高薪笔记】9.控制流2
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/10/%E3%80%90%E8%AF%BE%E5%90%8E%E9%85%8D%E5%A5%97%E5%A4%8D%E4%B9%A0%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%917.%E5%B8%B8%E9%87%8F/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">【课后配套复习高薪笔记】7.常量</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>

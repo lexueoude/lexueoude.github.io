@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+    <meta name="description" content="乐学知识，偶得美好">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    【Tomcat介绍】之6.【url知识点补充】协议主机端口应用与资源文件 |
+    
+    乐学·偶得</title>
+  
+    <link rel="shortcut icon" href="/lxod_logo.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-【Tomcat介绍】之6.【url知识点补充】协议主机端口应用与资源文件" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【Tomcat介绍】之6.【url知识点补充】协议主机端口应用与资源文件
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/10/%E3%80%90Tomcat%E4%BB%8B%E7%BB%8D%E3%80%91%E4%B9%8B6.%E3%80%90url%E7%9F%A5%E8%AF%86%E7%82%B9%E8%A1%A5%E5%85%85%E3%80%91%E5%8D%8F%E8%AE%AE%E4%B8%BB%E6%9C%BA%E7%AB%AF%E5%8F%A3%E5%BA%94%E7%94%A8%E4%B8%8E%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/" class="article-date">
+  <time datetime="2020-06-10T14:31:49.014Z" itemprop="datePublished">2020-06-10</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <hr>
+<h2 id="title-【Tomcat介绍】之6"><a href="#title-【Tomcat介绍】之6" class="headerlink" title="title:【Tomcat介绍】之6"></a>title:【Tomcat介绍】之6</h2><h1 id="【Tomcat介绍】之【url知识点补充】协议主机端口应用与资源文件"><a href="#【Tomcat介绍】之【url知识点补充】协议主机端口应用与资源文件" class="headerlink" title="【Tomcat介绍】之【url知识点补充】协议主机端口应用与资源文件"></a>【Tomcat介绍】之【url知识点补充】协议主机端口应用与资源文件</h1><p>乐学偶得出品</p>
+<p>主讲人：William</p>
+<p>LX_Lab教研团队提供教研支持</p>
+<p>乐学偶得版权所有 公众号： 乐学Fintech 正版视频 网易云课堂搜索 ： 乐学偶得</p>
+<p>我们可能会看到浏览器里面有这样一个地址：</p>
+<p>http：//localhost：8080/web1/hello.html </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Tomcat%E4%BB%8B%E7%BB%8D%E3%80%91%E4%B9%8B6.%E3%80%90url%E7%9F%A5%E8%AF%86%E7%82%B9%E8%A1%A5%E5%85%85%E3%80%91%E5%8D%8F%E8%AE%AE%E4%B8%BB%E6%9C%BA%E7%AB%AF%E5%8F%A3%E5%BA%94%E7%94%A8%E4%B8%8E%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/" data-id="ckb9ghm5s000ppvyv9ytw9tlq"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E3%80%90%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%E3%80%911.%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%E6%80%BB%E7%BB%93/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            【Java进阶】【访问修饰符】1.访问修饰符总结
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/10/%E3%80%90%E8%AF%BE%E5%90%8E%E9%85%8D%E5%A5%97%E5%A4%8D%E4%B9%A0%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%9117.%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E4%BE%8B%E5%AD%90/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">【课后配套复习高薪笔记】17.函数的返回值的例子</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>
