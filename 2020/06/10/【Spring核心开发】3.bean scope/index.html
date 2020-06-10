@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    【Spring核心开发】3.bean scope |
+    【Spring核心开发】3 |
     
     乐学·偶得</title>
   
@@ -43,7 +43,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      【Spring核心开发】3.bean scope
+      【Spring核心开发】3
     </h1>
   
 
@@ -53,7 +53,7 @@
     
       <div class="article-meta">
         <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%913.bean%20scope/" class="article-date">
-  <time datetime="2020-06-10T14:31:49.044Z" itemprop="datePublished">2020-06-10</time>
+  <time datetime="2020-06-10T15:11:46.296Z" itemprop="datePublished">2020-06-10</time>
 </a>
         
       </div>
@@ -65,8 +65,7 @@
       
 
       
-        <hr>
-<h2 id="title-【Spring核心开发】3"><a href="#title-【Spring核心开发】3" class="headerlink" title="title:【Spring核心开发】3"></a>title:【Spring核心开发】3</h2><h1 id="【Spring核心开发】3-bean-scope"><a href="#【Spring核心开发】3-bean-scope" class="headerlink" title="【Spring核心开发】3.bean scope"></a>【Spring核心开发】3.bean scope</h1><p>乐学偶得版权所有 公众号：乐学Fintech 正版课程 网易云课堂：乐学偶得 </p>
+        <h1 id="【Spring核心开发】3-bean-scope"><a href="#【Spring核心开发】3-bean-scope" class="headerlink" title="【Spring核心开发】3.bean scope"></a>【Spring核心开发】3.bean scope</h1><p>乐学偶得版权所有 公众号：乐学Fintech 正版课程 网易云课堂：乐学偶得 </p>
 <p>主讲人：William</p>
 <p> LX_Lab提供教研与技术支持</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">       xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">       xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;bean id=<span class="string">"person"</span></span><br><span class="line">          <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.lexueoude.spring.test.Person"</span> scope=<span class="string">"prototype"</span>&gt;</span><br><span class="line">        &lt;constructor-arg value="88888888"&gt;&lt;/constructor-arg&gt;</span><br><span class="line">        &lt;constructor-arg value="William"&gt;&lt;/constructor-arg&gt;</span><br><span class="line">        &lt;property name="incomeNum" value="2000"&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name="address" ref="address"&gt;&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"address"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.lexueoude.spring.test.Address"</span>&gt;</span><br><span class="line">        &lt;constructor-arg name="street" value="lexueoude"&gt;&lt;/constructor-arg&gt;</span><br><span class="line">        &lt;constructor-arg name="postcode" value="1234567"&gt;&lt;/constructor-arg&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
@@ -75,7 +74,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%913.bean%20scope/" data-id="ckb9gumi2000cws5u624bef0y"
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%913.bean%20scope/" data-id="ckb9hsdgl000h4vyvevrncgsn"
          class="article-share-link">分享</a>
       
     </footer>
@@ -96,9 +95,9 @@
       </a>
     
     
-      <a href="/2020/06/10/%E3%80%90%E8%AF%BE%E5%90%8E%E9%85%8D%E5%A5%97%E5%A4%8D%E4%B9%A0%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%919.%E6%8E%A7%E5%88%B6%E6%B5%813/" class="article-nav-link">
+      <a href="/2020/06/10/%E3%80%90Tomcat%E4%BB%8B%E7%BB%8D%E3%80%912.Tomcat%E4%B8%8B%E8%BD%BD%E4%B8%8E%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">【课后配套复习高薪笔记】9.控制流3</div>
+        <div class="article-nav-title">【Tomcat介绍】2</div>
       </a>
     
   </nav>

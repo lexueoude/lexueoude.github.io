@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    【Spring核心开发】8.列表beans |
+    【Spring核心开发】8 |
     
     乐学·偶得</title>
   
@@ -43,7 +43,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      【Spring核心开发】8.列表beans
+      【Spring核心开发】8
     </h1>
   
 
@@ -53,7 +53,7 @@
     
       <div class="article-meta">
         <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%918.%E5%88%97%E8%A1%A8beans/" class="article-date">
-  <time datetime="2020-06-10T14:31:49.008Z" itemprop="datePublished">2020-06-10</time>
+  <time datetime="2020-06-10T15:11:46.265Z" itemprop="datePublished">2020-06-10</time>
 </a>
         
       </div>
@@ -65,8 +65,7 @@
       
 
       
-        <hr>
-<h2 id="title-【Spring核心开发】8"><a href="#title-【Spring核心开发】8" class="headerlink" title="title:【Spring核心开发】8"></a>title:【Spring核心开发】8</h2><h1 id="【Spring核心开发】8-列表beans"><a href="#【Spring核心开发】8-列表beans" class="headerlink" title="【Spring核心开发】8.列表beans"></a>【Spring核心开发】8.列表beans</h1><p>乐学偶得版权所有 公众号：乐学Fintech 正版课程 网易云课堂：乐学偶得 </p>
+        <h1 id="【Spring核心开发】8-列表beans"><a href="#【Spring核心开发】8-列表beans" class="headerlink" title="【Spring核心开发】8.列表beans"></a>【Spring核心开发】8.列表beans</h1><p>乐学偶得版权所有 公众号：乐学Fintech 正版课程 网易云课堂：乐学偶得 </p>
 <p>主讲人：William</p>
 <p> LX_Lab提供教研与技术支持</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lexueoude.spring.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Jungle</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Animal largest;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Animal&gt; animals;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Animal <span class="title">getLargest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> largest;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLargest</span><span class="params">(Animal largest)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.largest = largest;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Animal&gt; <span class="title">getAnimals</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> animals;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAnimals</span><span class="params">(List&lt;Animal&gt; animals)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.animals = animals;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"></span><br><span class="line">        sb.append(<span class="string">"丛林之中个头最大的动物为"</span> +largest);</span><br><span class="line">        sb.append(<span class="string">"\n"</span>);</span><br><span class="line">        sb.append(<span class="string">"所有的动物有：\n"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(Animal animal:animals)&#123;</span><br><span class="line">            sb.append(animal);</span><br><span class="line">            sb.append(<span class="string">"\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -75,7 +74,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%918.%E5%88%97%E8%A1%A8beans/" data-id="ckb9gumi5000hws5ubtfd1oh9"
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%918.%E5%88%97%E8%A1%A8beans/" data-id="ckb9hsdgm000i4vyvcon5806e"
          class="article-share-link">分享</a>
       
     </footer>
@@ -86,19 +85,19 @@
     
   <nav class="article-nav">
     
-      <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%911.Spring%E7%9A%84HelloWorld/" class="article-nav-link">
+      <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%916.P%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            【Spring核心开发】1.Spring的HelloWorld
+            【Spring核心开发】6
           
         </div>
       </a>
     
     
-      <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%912.classpath%EF%BC%8Ccontext%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" class="article-nav-link">
+      <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%915.bean%20%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">【Spring核心开发】2.classpath，context与依赖注入</div>
+        <div class="article-nav-title">【Spring核心开发】5</div>
       </a>
     
   </nav>

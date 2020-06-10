@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    【Spring核心开发】5.bean 工厂方法 |
+    【Spring核心开发】5 |
     
     乐学·偶得</title>
   
@@ -43,7 +43,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      【Spring核心开发】5.bean 工厂方法
+      【Spring核心开发】5
     </h1>
   
 
@@ -53,7 +53,7 @@
     
       <div class="article-meta">
         <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%915.bean%20%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2020-06-10T14:31:49.005Z" itemprop="datePublished">2020-06-10</time>
+  <time datetime="2020-06-10T15:11:46.264Z" itemprop="datePublished">2020-06-10</time>
 </a>
         
       </div>
@@ -65,8 +65,7 @@
       
 
       
-        <hr>
-<h2 id="title-【Spring核心开发】5"><a href="#title-【Spring核心开发】5" class="headerlink" title="title:【Spring核心开发】5"></a>title:【Spring核心开发】5</h2><h1 id="【Spring核心开发】5-bean-工厂方法"><a href="#【Spring核心开发】5-bean-工厂方法" class="headerlink" title="【Spring核心开发】5.bean 工厂方法"></a>【Spring核心开发】5.bean 工厂方法</h1><p>乐学偶得版权所有 公众号：乐学Fintech 正版课程 网易云课堂：乐学偶得 </p>
+        <h1 id="【Spring核心开发】5-bean-工厂方法"><a href="#【Spring核心开发】5-bean-工厂方法" class="headerlink" title="【Spring核心开发】5.bean 工厂方法"></a>【Spring核心开发】5.bean 工厂方法</h1><p>乐学偶得版权所有 公众号：乐学Fintech 正版课程 网易云课堂：乐学偶得 </p>
 <p>主讲人：William</p>
 <p> LX_Lab提供教研与技术支持</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lexueoude.spring.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> incomeNum;</span><br><span class="line">    <span class="keyword">private</span> Address address;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Person <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"正在通过Factory Method 生成这个Person"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Person(<span class="number">666666</span>,<span class="string">"Tom);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    public Person(int id, String name) &#123;</span></span><br><span class="line"><span class="string">        this.id = id;</span></span><br><span class="line"><span class="string">        this.name = name;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    public void onCreate()&#123;</span></span><br><span class="line"><span class="string">        System.out.println("</span>创建了一个person：<span class="string">" + this);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    public void onDestroy()&#123;</span></span><br><span class="line"><span class="string">        System.out.println("</span>这个person被销毁了:<span class="string">" +this);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    public void setIncomeNum(int incomeNum) &#123;</span></span><br><span class="line"><span class="string">        this.incomeNum = incomeNum;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    public void speak() &#123;</span></span><br><span class="line"><span class="string">        System.out.println("</span>Hello everyone , I am William saying hello from our project<span class="string">");</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    @Override</span></span><br><span class="line"><span class="string">    public String toString() &#123;</span></span><br><span class="line"><span class="string">        return "</span>Person&#123;<span class="string">" +</span></span><br><span class="line"><span class="string">                "</span>id=<span class="string">" + id +</span></span><br><span class="line"><span class="string">                "</span>, name=<span class="string">'" + name + '</span>\<span class="string">''</span> +</span><br><span class="line">                <span class="string">", incomeNum="</span> + incomeNum +</span><br><span class="line">                <span class="string">", address="</span> + address +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAddress</span><span class="params">(Address address)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.address = address;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -75,7 +74,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%915.bean%20%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95/" data-id="ckb9gumi4000fws5ud03p27r2"
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%915.bean%20%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95/" data-id="ckb9hsdgk000e4vyv2qrvf0w6"
          class="article-share-link">分享</a>
       
     </footer>
@@ -86,19 +85,19 @@
     
   <nav class="article-nav">
     
-      <a href="/2020/06/10/%E3%80%90%E8%AF%BE%E5%90%8E%E9%85%8D%E5%A5%97%E5%A4%8D%E4%B9%A0%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%916.%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5/" class="article-nav-link">
+      <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%918.%E5%88%97%E8%A1%A8beans/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            【课后配套复习高薪笔记】6.用户输入
+            【Spring核心开发】8
           
         </div>
       </a>
     
     
-      <a href="/2020/06/10/%E3%80%90%E8%AF%BE%E5%90%8E%E9%85%8D%E5%A5%97%E5%A4%8D%E4%B9%A0%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%9115.%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%9A%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86/" class="article-nav-link">
+      <a href="/2020/06/10/%E3%80%90%E8%AF%BE%E5%90%8E%E9%85%8D%E5%A5%97%E5%A4%8D%E4%B9%A0%E9%AB%98%E8%96%AA%E7%AC%94%E8%AE%B0%E3%80%916.%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">【课后配套复习高薪笔记】15.函数的多参数处理</div>
+        <div class="article-nav-title">【课后配套复习高薪笔记】6</div>
       </a>
     
   </nav>

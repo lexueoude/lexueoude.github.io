@@ -53,7 +53,7 @@
     
       <div class="article-meta">
         <a href="/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B5%E3%80%90getter%E4%B8%8E%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%91/" class="article-date">
-  <time datetime="2020-06-10T14:31:49.045Z" itemprop="datePublished">2020-06-10</time>
+  <time datetime="2020-06-10T15:11:46.297Z" itemprop="datePublished">2020-06-10</time>
 </a>
         
       </div>
@@ -66,7 +66,6 @@
 
       
         <hr>
-<h2 id="title-【Java进阶】之5【getter与返回值】"><a href="#title-【Java进阶】之5【getter与返回值】" class="headerlink" title="title:【Java进阶】之5【getter与返回值】"></a>title:【Java进阶】之5【getter与返回值】</h2><hr>
 <p>title: Java </p>
 <hr>
 <h1 id="【Java进阶】之【getter与返回值】"><a href="#【Java进阶】之【getter与返回值】" class="headerlink" title="【Java进阶】之【getter与返回值】"></a>【Java进阶】之【getter与返回值】</h1><h2 id="我们可以通过返回值调取数据，有时候我们也叫这种方法getter方法"><a href="#我们可以通过返回值调取数据，有时候我们也叫这种方法getter方法" class="headerlink" title="我们可以通过返回值调取数据，有时候我们也叫这种方法getter方法"></a>我们可以通过返回值调取数据，有时候我们也叫这种方法getter方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"大家好，我是一个机器人，我的名字叫做："</span>+ name );</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">calculateHowManyYearsLeft</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> yearsLeft = <span class="number">65</span> - age;</span><br><span class="line">		<span class="keyword">return</span> yearsLeft;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function">String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Person person1 = <span class="keyword">new</span> Person();</span><br><span class="line">		</span><br><span class="line">		person1.name = <span class="string">"William"</span>;</span><br><span class="line">		person1.age = <span class="number">18</span>;</span><br><span class="line">		</span><br><span class="line">		person1.speak();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> years = person1.calculateHowManyYearsLeft();</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"我离退休还需要工作："</span>+years +<span class="string">"年，OMG！"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> age = person1.getAge();</span><br><span class="line">		String name = person1.getName();</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"这个人的名字叫做："</span>+name);</span><br><span class="line">		System.out.println(<span class="string">"这个人的年龄为："</span>+age);</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -74,7 +73,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B5%E3%80%90getter%E4%B8%8E%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%91/" data-id="ckb9gumhz0007ws5u5fpjfg4h"
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B5%E3%80%90getter%E4%B8%8E%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%91/" data-id="ckb9hsdgf00054vyvala8fpum"
          class="article-share-link">分享</a>
       
     </footer>
@@ -89,7 +88,7 @@
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            【高薪笔记】【JavaWeb】9.JSP中通过java代码批量生成html
+            【高薪笔记】【JavaWeb】9
           
         </div>
       </a>
@@ -97,7 +96,7 @@
     
       <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%913.bean%20scope/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">【Spring核心开发】3.bean scope</div>
+        <div class="article-nav-title">【Spring核心开发】3</div>
       </a>
     
   </nav>

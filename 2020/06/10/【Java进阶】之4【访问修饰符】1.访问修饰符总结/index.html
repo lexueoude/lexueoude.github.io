@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    【Java进阶】之4【访问修饰符】1.访问修饰符总结 |
+    【Java进阶】之4【访问修饰符】1 |
     
     乐学·偶得</title>
   
@@ -43,7 +43,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      【Java进阶】之4【访问修饰符】1.访问修饰符总结
+      【Java进阶】之4【访问修饰符】1
     </h1>
   
 
@@ -53,7 +53,7 @@
     
       <div class="article-meta">
         <a href="/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B4%E3%80%90%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%E3%80%911.%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%E6%80%BB%E7%BB%93/" class="article-date">
-  <time datetime="2020-06-10T14:31:49.009Z" itemprop="datePublished">2020-06-10</time>
+  <time datetime="2020-06-10T15:11:46.266Z" itemprop="datePublished">2020-06-10</time>
 </a>
         
       </div>
@@ -65,8 +65,7 @@
       
 
       
-        <hr>
-<h2 id="title-【Java进阶】之4【访问修饰符】1"><a href="#title-【Java进阶】之4【访问修饰符】1" class="headerlink" title="title:【Java进阶】之4【访问修饰符】1"></a>title:【Java进阶】之4【访问修饰符】1</h2><h1 id="【Java进阶】之【访问修饰符】"><a href="#【Java进阶】之【访问修饰符】" class="headerlink" title="【Java进阶】之【访问修饰符】"></a>【Java进阶】之【访问修饰符】</h1><p>主要代码</p>
+        <h1 id="【Java进阶】之【访问修饰符】"><a href="#【Java进阶】之【访问修饰符】" class="headerlink" title="【Java进阶】之【访问修饰符】"></a>【Java进阶】之【访问修饰符】</h1><p>主要代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> accessmod;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Plant plant = <span class="keyword">new</span> Plant();</span><br><span class="line">		System.out.println(plant.name);</span><br><span class="line">		System.out.println(plant.ID);</span><br><span class="line">		System.out.println(plant.type);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> accessmod;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">grass</span> <span class="keyword">extends</span> <span class="title">Plant</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">tree</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		type = <span class="string">"tree01"</span>;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>一个好的与不好的做法</p>
@@ -75,7 +74,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B4%E3%80%90%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%E3%80%911.%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%E6%80%BB%E7%BB%93/" data-id="ckb9gumhy0006ws5u10c65olu"
+      <a data-url="lexueoude.github.io/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B4%E3%80%90%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%E3%80%911.%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%E6%80%BB%E7%BB%93/" data-id="ckb9hsdgf00044vyv8xsbahdw"
          class="article-share-link">分享</a>
       
     </footer>
@@ -90,15 +89,15 @@
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            【高薪笔记】【JavaWeb】10.JSP中通过java代码写逻辑判断
+            【高薪笔记】【JavaWeb】10
           
         </div>
       </a>
     
     
-      <a href="/2020/06/10/%E3%80%90Java%E8%BF%9B%E9%98%B6%E3%80%91%E4%B9%8B6%E3%80%90setter%E4%B8%8Ethis%E3%80%91/" class="article-nav-link">
+      <a href="/2020/06/10/%E3%80%90Spring%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91%E3%80%911.Spring%E7%9A%84HelloWorld/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">【Java进阶】之6【setter与this】</div>
+        <div class="article-nav-title">【Spring核心开发】1</div>
       </a>
     
   </nav>
